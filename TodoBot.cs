@@ -21,6 +21,16 @@ namespace TODO_Bot
             //token path
             var tokenPath = ConfigurationManager.AppSettings["tokenlocation"];
 
+            //The path to download folder
+            string downloadPath = @".\Download\";
+
+                                  
+            //Creating a directory to store files if it doesn't exist.
+            if (!Directory.Exists(downloadPath))
+            {
+                DirectoryInfo di = Directory.CreateDirectory(downloadPath);
+            }
+            
             //token to access the bot
             string token = File.ReadAllText(tokenPath);
 
@@ -92,16 +102,17 @@ namespace TODO_Bot
                     foreach (var fileName in fileEntries)
                     {
                         _bot.SendTextMessageAsync(e.Message.Chat.Id,
-                        $"{fileName}");
+                        $"{Path.GetFileName(fileName)}");
                     }
                     
                 }
 
                 //Handler for /gimme command
-                if (e.Message.Text.Contains("/gimme"))
+                if (e.Message.Text.Contains("/gimme") && e.Message.Text.Length > "/gimme".Length)
                 {
                     //Meh code to get filenames without download path
-                    var whatToGive = e.Message.Text.Substring(7);
+                    var fileName = e.Message.Text.Substring("/gimme".Length+1);
+                    var whatToGive = downloadPath + fileName;
                     //Sending file names
                     Upload(whatToGive, e.Message.Chat.Id);
                 }
@@ -117,12 +128,7 @@ namespace TODO_Bot
         /// <param name="fileName">The name of a file</param>
         /// <param name="path">Path to download folder</param>
         static async void DownLoad(string fileId, string fileName, string path)
-        {                        
-            //Creating a directory to store files if it doesn't exist
-            if (!Directory.Exists(path))
-            {
-                DirectoryInfo di = Directory.CreateDirectory(path);
-            }
+        {  
 
             //Initializing a variable to store file data
             var file = await _bot.GetFileAsync(fileId);
@@ -147,6 +153,7 @@ namespace TODO_Bot
         /// <param name="id">The id of the message</param>
         static async void Upload(string fileName, long id)
         {
+            Console.WriteLine(fileName);
             //Initialization of using to open file-stream and release resources automatically
             using(FileStream fs = System.IO.File.OpenRead(fileName))
             {
