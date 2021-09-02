@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TODO_Bot", "TODO_Bot.csproj", "{8F9D17FE-78E2-49D5-AB97-164B0F839E36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-TODO-Bot", "WPF-TODO-Bot.csproj", "{B5EB20C1-139D-4DEE-AE9E-1C5E43FB005F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8F9D17FE-78E2-49D5-AB97-164B0F839E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F9D17FE-78E2-49D5-AB97-164B0F839E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F9D17FE-78E2-49D5-AB97-164B0F839E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F9D17FE-78E2-49D5-AB97-164B0F839E36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5EB20C1-139D-4DEE-AE9E-1C5E43FB005F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EB20C1-139D-4DEE-AE9E-1C5E43FB005F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EB20C1-139D-4DEE-AE9E-1C5E43FB005F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EB20C1-139D-4DEE-AE9E-1C5E43FB005F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0F78578B-AB39-4179-BFFB-E2138AE48644}
+		SolutionGuid = {01B9D90D-CDDB-4614-B4E0-19EA8F4D8AED}
 	EndGlobalSection
 EndGlobal
